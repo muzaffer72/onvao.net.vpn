@@ -31,6 +31,7 @@ jobs:
       with:
         flutter-version: '3.0.1'
     - run: dart --version
+    - run: dart fix --apply
     - run: flutter --version
     - run: flutter pub get
     - run: flutter build apk
@@ -52,6 +53,7 @@ jobs:
       with:
         flutter-version: '3.0.1'
     - run: dart --version
+    - run: dart fix --apply
     - run: flutter --version
     - run: flutter pub get
     - run: flutter build ios --release --no-codesign
