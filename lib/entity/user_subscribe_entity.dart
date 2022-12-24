@@ -21,7 +21,7 @@ class UserSubscribeEntity {
 
   final int planId;
   final String token;
-  final int expiredAt;
+  final int? expiredAt;
   final int u;
   final int d;
   final int transferEnable;
