@@ -100,7 +100,7 @@ class MySubscribeState extends State<MySubscribe> {
         child: Container(
           alignment: Alignment.center,
           child: Text(
-            '套餐已过期，请重新订阅',
+            'Aboneliğinizin süresi doldu, lütfen tekrar abone olun',
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: ScreenUtil().setWidth(40),
@@ -161,9 +161,8 @@ class MySubscribeState extends State<MySubscribe> {
                             backgroundColor: widget.isOn ? Colors.black : Colors.white,
                             valueColor: AlwaysStoppedAnimation(Colors.yellow[600]),
                             value: double.parse(
-                                ((widget.userSubscribeEntity!.u ?? 0 + widget.userSubscribeEntity!.d ?? 0) /
-                                            widget.userSubscribeEntity!.transferEnable ??
-                                        1)
+                                ((widget.userSubscribeEntity!.u) /
+                                            widget.userSubscribeEntity!.transferEnable)
                                     .toStringAsFixed(2)),
                           ),
                         ),
@@ -198,7 +197,7 @@ class MySubscribeState extends State<MySubscribe> {
                               _appModel.getTunnelLog();
                             },
                             child: Text(
-                              '续费',
+                              'Yenile',
                               style: TextStyle(color: Colors.black87, fontSize: ScreenUtil().setSp(36)),
                             ),
                           ),
@@ -218,7 +217,7 @@ class MySubscribeState extends State<MySubscribe> {
                           _appModel.getTunnelConfiguration();
                         },
                         child: Text(
-                          '重置',
+                          'Sıfırla',
                           style: TextStyle(color: Colors.black87, fontSize: ScreenUtil().setSp(36)),
                         ),
                       ),

@@ -139,7 +139,7 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
                     CircleAvatar(
                       radius: ScreenUtil().setWidth(10),
                       backgroundColor: (DateTime.now().microsecondsSinceEpoch / 1000000 -
-                          (int.parse(_serverModel.serverEntityList![index].lastCheckAt ?? '0')) <
+                          (int.parse(_serverModel.serverEntityList![index].lastCheckAt)) <
                           60 * 10)
                           ? Colors.green
                           : Colors.red,
