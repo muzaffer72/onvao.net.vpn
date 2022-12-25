@@ -2,7 +2,6 @@
 //
 //     final planEntity = planEntityFromMap(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 List<PlanEntity> planEntityFromList(List data) => List<PlanEntity>.from(data.map((x) => PlanEntity.fromMap(x)));

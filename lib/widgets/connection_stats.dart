@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sail/constant/app_colors.dart';
+import 'package:sail/constant/app_strings.dart';
 import 'package:sail/models/user_model.dart';
 import 'package:sail/utils/navigator_util.dart';
 
@@ -40,7 +41,7 @@ class ConnectionStatsState extends State<ConnectionStats> {
               Row(mainAxisAlignment: MainAxisAlignment.center, children: const [
                 Icon(Icons.map,
                     color: AppColors.grayColor, size: 20),
-                Text("其他节点",
+                Text(AppStrings.digersunucular,
                     style:
                     TextStyle(fontSize: 12, color: AppColors.grayColor)),
                 Icon(Icons.chevron_right, color: AppColors.grayColor, size: 20)
@@ -79,7 +80,7 @@ class ConnectionStatsState extends State<ConnectionStats> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        "下行速度",
+                        AppStrings.downspeed,
                         style: TextStyle(
                             color: AppColors.grayColor,
                             fontWeight: FontWeight.w500),

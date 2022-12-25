@@ -7,6 +7,8 @@ import 'package:sail/models/app_model.dart';
 import 'package:sail/models/server_model.dart';
 import 'package:sail/models/user_model.dart';
 
+import '../constant/app_strings.dart';
+
 class PowerButton extends StatefulWidget {
   const PowerButton({Key? key}) : super(key: key);
 
@@ -30,7 +32,7 @@ class PowerButtonState extends State<PowerButton> {
   Future<void> pressConnectBtn() async {
     if (_serverModel.selectServerEntity == null) {
       Fluttertoast.showToast(
-          msg: "请选择服务器节点",
+          msg: AppStrings.sunucusec,
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.CENTER,
           timeInSecForIosWeb: 2,

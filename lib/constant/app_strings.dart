@@ -1,6 +1,9 @@
 class AppStrings {
   static const String appName = 'Onvao';
   static const String token = 'token';
+  static const String digersunucular = 'Diğer Sunucular';
+  static const String downspeed = 'Download Speed';
+  static const String sunucusec = 'Lütfen bir sunucu seçin';
   static const String authData = 'auth_data';
   static const String userInfo = 'USER_INFO';
   static const String userSubscribe = 'USER_SUBSCRIBE';
