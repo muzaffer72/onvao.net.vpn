@@ -18,7 +18,7 @@ class CrispPageState extends State<CrispPage> {
 
     crispMain = CrispMain(
       websiteId: AppStrings.crispWebsiteId,
-      locale: 'zh-cn',
+      locale: 'tr-tr',
     );
   }
 

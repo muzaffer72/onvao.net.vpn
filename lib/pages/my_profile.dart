@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:sail/constant/app_strings.dart';
 import 'package:sail/models/user_model.dart';
 import 'package:sail/service/user_service.dart';
 import 'package:sail/utils/navigator_util.dart';
@@ -49,7 +50,7 @@ class MyProfileState extends State<MyProfile> {
             children: <Widget>[
               ProfileWidget(
                 avatar: _userModel.userEntity?.avatarUrl,
-                userName: _userModel.userEntity?.email ?? "欢迎光临",
+                userName: _userModel.userEntity?.email ?? "Hoşgeldin",
                 onTap: onLogoutTap,
               ),
               Container(
@@ -98,7 +99,7 @@ class AccountWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
                 Text(
-                  "账户",
+                  AppStrings.profile,
                   style: TextStyle(
                     color: Color(0xFFADADAD),
                     fontSize: 20,
@@ -111,12 +112,12 @@ class AccountWidget extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(bottom: 16),
             child: InkWell(
-              onTap: () => onWebLinkTap("个人中心", '/profile'),
+              onTap: () => onWebLinkTap("Profilim", '/profile'),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text(
-                    "🙍 个人中心",
+                    "🙍 Profilim",
                     style: TextStyle(
                       fontSize: 18,
                     ),
@@ -129,12 +130,12 @@ class AccountWidget extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(bottom: 16),
             child: InkWell(
-              onTap: () => onWebLinkTap("我的工单", "/ticket"),
+              onTap: () => onWebLinkTap("Destek", "/ticket"),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text(
-                    "🎫 我的工单",
+                    "🎫 Destek",
                     style: TextStyle(
                       fontSize: 18,
                     ),
@@ -147,12 +148,12 @@ class AccountWidget extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(bottom: 16),
             child: InkWell(
-              onTap: () => onWebLinkTap("流量明细", "traffic"),
+              onTap: () => onWebLinkTap("Trafik", "traffic"),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text(
-                    "🔖 流量明细",
+                    "🔖 Trafik",
                     style: TextStyle(
                       fontSize: 18,
                     ),
@@ -186,7 +187,7 @@ class FinanceWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
                 Text(
-                  "财务",
+                  AppStrings.finance,
                   style: TextStyle(
                     color: Color(0xFFADADAD),
                     fontSize: 20,
@@ -199,12 +200,12 @@ class FinanceWidget extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(bottom: 16),
             child: InkWell(
-              onTap: () => onWebLinkTap("我的订单", "/order"),
+              onTap: () => onWebLinkTap("Satın Aldıklarım", "/order"),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text(
-                    "💳 我的订单",
+                    "💳 Satın Almalar",
                     style: TextStyle(
                       fontSize: 18,
                     ),

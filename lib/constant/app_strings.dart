@@ -2,6 +2,8 @@ class AppStrings {
   static const String appName = 'Onvao';
   static const String token = 'token';
   static const String digersunucular = 'Diğer Sunucular';
+  static const String profile = 'Profilim';
+  static const String finance = 'Ödemeler';
   static const String downspeed = 'Download Speed';
   static const String sunucusec = 'Lütfen bir sunucu seçin';
   static const String authData = 'auth_data';
@@ -13,5 +15,5 @@ class AppStrings {
   static const String selectServerNode = 'SELECT_SERVER_NODE';
   static const String isFirstOpen = "IS_FIRST_OPEN";
   static const String openDoor = '开启加速服务';
-  static const String crispWebsiteId = 'b7b8fcd4-9857-42b7-a39d-51fb4930130d';
+  static const String crispWebsiteId = '1ed1dbb7-897c-4580-917d-e420c7281260';
 }
