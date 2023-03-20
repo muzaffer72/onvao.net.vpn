@@ -1,5 +1,5 @@
 class AppUrls {
-  static const String baseUrl = 'https://onvao.net'; // 基础接口地址
+  static const String baseUrl = 'https://p.xflash.cc'; // 基础接口地址
   static const String baseApiUrl = '$baseUrl/api/v1'; // 基础接口地址
 
   static const String login = '$baseApiUrl/passport/auth/login';
