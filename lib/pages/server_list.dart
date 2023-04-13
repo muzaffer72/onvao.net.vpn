@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_is_empty
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_tags/flutter_tags.dart';
 import 'package:provider/provider.dart';
@@ -63,7 +65,7 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
           child: Container(
             alignment: Alignment.center,
             child: Text(
-              '节点列表为空，请确认是否已经订阅',
+              'Hesabınıza tanımlı sunucu bulunamadı. Aboneliğinizi kontrol ediniz.',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: ScreenUtil().setWidth(40),
@@ -85,12 +87,12 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
           children: [
             RichText(
                 text: TextSpan(
-                    text: '请选择 ',
+                    text: 'Seçim Yapınız ',
                     style: Theme.of(context).textTheme.subtitle2?.copyWith(
                         fontWeight: FontWeight.w700, color: _appModel.isOn ? AppColors.grayColor : Colors.white),
                     children: [
                       TextSpan(
-                          text: '节点',
+                          text: 'Sunucu',
                           style: Theme.of(context).textTheme.subtitle2?.copyWith(
                               fontWeight: FontWeight.normal, color: _appModel.isOn ? AppColors.grayColor : Colors.white))
                     ])),
@@ -139,7 +141,7 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
                     CircleAvatar(
                       radius: ScreenUtil().setWidth(10),
                       backgroundColor: (DateTime.now().microsecondsSinceEpoch / 1000000 -
-                          (int.parse(_serverModel.serverEntityList![index].lastCheckAt ?? '0')) <
+                          (int.parse(_serverModel.serverEntityList![index].lastCheckAt)) <
                           60 * 10)
                           ? Colors.green
                           : Colors.red,
@@ -189,7 +191,7 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
                       padding: EdgeInsets.only(right: ScreenUtil().setWidth(10)),
                       child: Text(
                         _serverModel.serverEntityList![index].ping!.inSeconds > 10
-                            ? '超时'
+                            ? 'zaman aşımı'
                             : "${_serverModel.serverEntityList![index].ping!.inMilliseconds}ms",
                         style: TextStyle(
                             color: _serverModel.serverEntityList![index].ping!.inSeconds > 10

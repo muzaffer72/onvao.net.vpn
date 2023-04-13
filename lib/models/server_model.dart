@@ -34,7 +34,7 @@ class ServerModel extends BaseModel {
         List.from(data.map((e) => Map<String, dynamic>.from(jsonDecode(e))));
 
     if (newData.isEmpty || forceRefresh) {
-      setServerEntityList(await _serverService.server());
+      _serverEntityList = serverEntityFromList(newData);
     } else {
       _serverEntityList = serverEntityFromList(newData);
     }

@@ -2,7 +2,6 @@
 //
 //     final userSubscribeEntity = userSubscribeEntityFromMap(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 class UserSubscribeEntity {
@@ -114,7 +113,7 @@ class Plan {
     transferEnable: json["transfer_enable"],
     name: json["name"],
     show: json["show"],
-    sort: json["sort"] == null ? 0 : json["sort"],
+    sort: json["sort"],
     renew: json["renew"],
     content: json["content"],
     monthPrice: json["month_price"],

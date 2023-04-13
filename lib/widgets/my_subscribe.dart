@@ -161,9 +161,8 @@ class MySubscribeState extends State<MySubscribe> {
                             backgroundColor: widget.isOn ? Colors.black : Colors.white,
                             valueColor: AlwaysStoppedAnimation(Colors.yellow[600]),
                             value: double.parse(
-                                ((widget.userSubscribeEntity!.u ?? 0 + widget.userSubscribeEntity!.d ?? 0) /
-                                    widget.userSubscribeEntity!.transferEnable ??
-                                    1)
+                                ((widget.userSubscribeEntity!.u) /
+                                    widget.userSubscribeEntity!.transferEnable)
                                     .toStringAsFixed(2)),
                           ),
                         ),
