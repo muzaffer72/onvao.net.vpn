@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_is_empty
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_tags/flutter_tags.dart';
 import 'package:provider/provider.dart';
@@ -65,7 +63,7 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
           child: Container(
             alignment: Alignment.center,
             child: Text(
-              'Hesabınıza tanımlı sunucu bulunamadı. Aboneliğinizi kontrol ediniz.',
+              '节点列表为空，请确认是否已经订阅',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: ScreenUtil().setWidth(40),
@@ -87,19 +85,19 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
           children: [
             RichText(
                 text: TextSpan(
-                    text: 'Seçim Yapınız ',
-                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    text: '请选择 ',
+                    style: Theme.of(context).textTheme.subtitle2?.copyWith(
                         fontWeight: FontWeight.w700, color: _appModel.isOn ? AppColors.grayColor : Colors.white),
                     children: [
                       TextSpan(
-                          text: 'Sunucu',
-                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                          text: '节点',
+                          style: Theme.of(context).textTheme.subtitle2?.copyWith(
                               fontWeight: FontWeight.normal, color: _appModel.isOn ? AppColors.grayColor : Colors.white))
                     ])),
             InkWell(
               onTap: _serverModel.pingAll,
               child: Text("Ping",
-                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                  style: Theme.of(context).textTheme.subtitle2?.copyWith(
                       fontWeight: FontWeight.normal, color: _appModel.isOn ? AppColors.grayColor : Colors.white)),
             )
           ],
@@ -141,7 +139,7 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
                     CircleAvatar(
                       radius: ScreenUtil().setWidth(10),
                       backgroundColor: (DateTime.now().microsecondsSinceEpoch / 1000000 -
-                          (int.parse(_serverModel.serverEntityList![index].lastCheckAt)) <
+                          (int.parse(_serverModel.serverEntityList![index].lastCheckAt ?? '0')) <
                           60 * 10)
                           ? Colors.green
                           : Colors.red,
@@ -154,7 +152,7 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
                       children: [
                         Text(
                           _serverModel.serverEntityList![index].name,
-                          style: Theme.of(context).textTheme.bodyLarge,
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                         const SizedBox(
                           width: 15,
@@ -191,7 +189,7 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
                       padding: EdgeInsets.only(right: ScreenUtil().setWidth(10)),
                       child: Text(
                         _serverModel.serverEntityList![index].ping!.inSeconds > 10
-                            ? 'zaman aşımı'
+                            ? '超时'
                             : "${_serverModel.serverEntityList![index].ping!.inMilliseconds}ms",
                         style: TextStyle(
                             color: _serverModel.serverEntityList![index].ping!.inSeconds > 10
