@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sail/constant/app_strings.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -41,7 +42,9 @@ class WebViewWidgetState extends State<WebViewWidget> {
         javascriptMode: JavascriptMode.unrestricted,
         onWebViewCreated: (controller) => this.controller = controller,
         onPageFinished: (url) {
-          print('url=$url');
+          if (kDebugMode) {
+            print('url=$url');
+          }
           controller.runJavascript(_javaScript);
         },
       ),

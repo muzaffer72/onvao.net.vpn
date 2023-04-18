@@ -88,18 +88,18 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
             RichText(
                 text: TextSpan(
                     text: 'Seçim Yapınız ',
-                    style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
                         fontWeight: FontWeight.w700, color: _appModel.isOn ? AppColors.grayColor : Colors.white),
                     children: [
                       TextSpan(
                           text: 'Sunucu',
-                          style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
                               fontWeight: FontWeight.normal, color: _appModel.isOn ? AppColors.grayColor : Colors.white))
                     ])),
             InkWell(
               onTap: _serverModel.pingAll,
               child: Text("Ping",
-                  style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
                       fontWeight: FontWeight.normal, color: _appModel.isOn ? AppColors.grayColor : Colors.white)),
             )
           ],
@@ -154,7 +154,7 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
                       children: [
                         Text(
                           _serverModel.serverEntityList![index].name,
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.bodyLarge,
                         ),
                         const SizedBox(
                           width: 15,
