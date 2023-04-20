@@ -28,7 +28,7 @@ class LogoBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Sail",
+            "Onvao.Net",
             style: TextStyle(
               fontWeight: FontWeight.w900,
               fontSize: ScreenUtil().setSp(60),

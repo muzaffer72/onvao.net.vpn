@@ -40,7 +40,7 @@ class ProfileWidget extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                       child: const Text(
-                        '退出',
+                        'Çıkış Yap',
                         style: TextStyle(fontSize: 14, color: Colors.white, fontWeight: FontWeight.w500),
                       ),
                     ),

@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_is_empty
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_tags/flutter_tags.dart';
 import 'package:provider/provider.dart';
@@ -65,7 +63,7 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
           child: Container(
             alignment: Alignment.center,
             child: Text(
-              'Hesabınıza tanımlı sunucu bulunamadı. Aboneliğinizi kontrol ediniz.',
+              'Düğüm listesi boş, lütfen abone olup olmadığınızı onaylayın',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: ScreenUtil().setWidth(40),
@@ -88,18 +86,18 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
             RichText(
                 text: TextSpan(
                     text: 'Seçim Yapınız ',
-                    style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
                         fontWeight: FontWeight.w700, color: _appModel.isOn ? AppColors.grayColor : Colors.white),
                     children: [
                       TextSpan(
                           text: 'Sunucu',
-                          style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
                               fontWeight: FontWeight.normal, color: _appModel.isOn ? AppColors.grayColor : Colors.white))
                     ])),
             InkWell(
               onTap: _serverModel.pingAll,
               child: Text("Ping",
-                  style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
                       fontWeight: FontWeight.normal, color: _appModel.isOn ? AppColors.grayColor : Colors.white)),
             )
           ],
@@ -141,7 +139,7 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
                     CircleAvatar(
                       radius: ScreenUtil().setWidth(10),
                       backgroundColor: (DateTime.now().microsecondsSinceEpoch / 1000000 -
-                          (int.parse(_serverModel.serverEntityList![index].lastCheckAt)) <
+                          (int.parse(_serverModel.serverEntityList![index].lastCheckAt ?? '0')) <
                           60 * 10)
                           ? Colors.green
                           : Colors.red,
@@ -154,7 +152,7 @@ class ServerListPageState extends State<ServerListPage> with AutomaticKeepAliveC
                       children: [
                         Text(
                           _serverModel.serverEntityList![index].name,
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.bodyLarge,
                         ),
                         const SizedBox(
                           width: 15,

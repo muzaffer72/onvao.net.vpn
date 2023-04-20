@@ -263,7 +263,7 @@ class SheetHeader extends StatelessWidget {
     return Positioned(
       top: topMargin,
       child: Text(
-        '最近连接节点',
+        'en son bağlanan düğüm',
         style: TextStyle(
           color: Colors.grey[100],
           fontSize: fontSize,

@@ -36,7 +36,7 @@ class MySubscribeState extends State<MySubscribe> {
         Padding(
           padding: EdgeInsets.only(left: ScreenUtil().setWidth(75)),
           child: Text(
-            "我的订阅",
+            "Üyelik Bilgilerim",
             style: TextStyle(
                 fontSize: ScreenUtil().setSp(32),
                 color: widget.isOn ? AppColors.grayColor : Colors.grey[400],
@@ -77,7 +77,7 @@ class MySubscribeState extends State<MySubscribe> {
         child: Container(
           alignment: Alignment.center,
           child: Text(
-            !widget.isLogin ? '请先登陆' : '请先订阅下方套餐',
+            !widget.isLogin ? 'Giriş yapın' : 'Abone Olmalısınız',
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: ScreenUtil().setWidth(40),
@@ -143,7 +143,7 @@ class MySubscribeState extends State<MySubscribe> {
                         Text(
                           widget.userSubscribeEntity?.expiredAt != null
                               ? '${DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.fromMillisecondsSinceEpoch(widget.userSubscribeEntity!.expiredAt * 1000))}过期'
-                              : '长期有效',
+                              : 'Uzun Vadeli',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: ScreenUtil().setSp(35),
@@ -161,13 +161,14 @@ class MySubscribeState extends State<MySubscribe> {
                             backgroundColor: widget.isOn ? Colors.black : Colors.white,
                             valueColor: AlwaysStoppedAnimation(Colors.yellow[600]),
                             value: double.parse(
-                                ((widget.userSubscribeEntity!.u) /
-                                    widget.userSubscribeEntity!.transferEnable)
+                                ((widget.userSubscribeEntity!.u ?? 0 + widget.userSubscribeEntity!.d ?? 0) /
+                                    widget.userSubscribeEntity!.transferEnable ??
+                                    1)
                                     .toStringAsFixed(2)),
                           ),
                         ),
                         Text(
-                          '已用 ${TransferUtil().toHumanReadable(widget.userSubscribeEntity!.u + widget.userSubscribeEntity!.d)} / 总计 ${TransferUtil().toHumanReadable(widget.userSubscribeEntity!.transferEnable)}',
+                          'Kullanılan ${TransferUtil().toHumanReadable(widget.userSubscribeEntity!.u + widget.userSubscribeEntity!.d)} / Toplam ${TransferUtil().toHumanReadable(widget.userSubscribeEntity!.transferEnable)}',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: ScreenUtil().setSp(26),

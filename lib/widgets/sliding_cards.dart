@@ -221,11 +221,11 @@ class CardContentState extends State<CardContent> {
                       () => UserService().getQuickLoginUrl({
                             'redirect': "/plan/${widget.id}"
                           })?.then((value) {
-                            NavigatorUtil.goWebView(context, "配置订阅", value);
+                            NavigatorUtil.goWebView(context, "Aboneliği Yapılandır", value);
                           })),
                   child: Transform.translate(
                     offset: Offset(24 * widget.offset, 0),
-                    child: Text('购买',
+                    child: Text('Satın Al',
                         style: TextStyle(
                             color: Colors.black87,
                             fontSize: ScreenUtil().setSp(36))),
@@ -236,7 +236,7 @@ class CardContentState extends State<CardContent> {
               Transform.translate(
                 offset: Offset(32 * widget.offset, 0),
                 child: Text(
-                  '¥ ${widget.lowestPrice} 起',
+                  '₺ ${widget.lowestPrice} Yükselt',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,

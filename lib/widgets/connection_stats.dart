@@ -27,7 +27,7 @@ class ConnectionStatsState extends State<ConnectionStats> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text("00:15:02",
+        const Text("00:00:00",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 40,
@@ -93,7 +93,7 @@ class ConnectionStatsState extends State<ConnectionStats> {
                             children: [
                               TextSpan(text: "75.9"),
                               TextSpan(
-                                  text: " KB/s",
+                                  text: " MB/s",
                                   style:
                                   TextStyle(fontWeight: FontWeight.normal)),
                             ]),
@@ -132,7 +132,7 @@ class ConnectionStatsState extends State<ConnectionStats> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        "上行速度",
+                        "Yükleme Hızı",
                         style: TextStyle(
                             color: AppColors.grayColor,
                             fontWeight: FontWeight.w500),
@@ -145,7 +145,7 @@ class ConnectionStatsState extends State<ConnectionStats> {
                             children: [
                               TextSpan(text: "29.6"),
                               TextSpan(
-                                  text: " KB/s",
+                                  text: " MB/s",
                                   style:
                                   TextStyle(fontWeight: FontWeight.normal)),
                             ]),

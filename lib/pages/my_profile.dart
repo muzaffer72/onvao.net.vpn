@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:sail/constant/app_strings.dart';
 import 'package:sail/models/user_model.dart';
 import 'package:sail/service/user_service.dart';
 import 'package:sail/utils/navigator_util.dart';
@@ -50,7 +49,7 @@ class MyProfileState extends State<MyProfile> {
             children: <Widget>[
               ProfileWidget(
                 avatar: _userModel.userEntity?.avatarUrl,
-                userName: _userModel.userEntity?.email ?? "Hoşgeldin",
+                userName: _userModel.userEntity?.email ?? "Hoş geldin",
                 onTap: onLogoutTap,
               ),
               Container(
@@ -99,7 +98,7 @@ class AccountWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
                 Text(
-                  AppStrings.profile,
+                  "Hesap",
                   style: TextStyle(
                     color: Color(0xFFADADAD),
                     fontSize: 20,
@@ -148,12 +147,12 @@ class AccountWidget extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(bottom: 16),
             child: InkWell(
-              onTap: () => onWebLinkTap("Trafik", "traffic"),
+              onTap: () => onWebLinkTap("Hesap Detayım", "traffic"),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text(
-                    "🔖 Trafik",
+                    "🔖 Hesap Detayım",
                     style: TextStyle(
                       fontSize: 18,
                     ),
@@ -187,7 +186,7 @@ class FinanceWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
                 Text(
-                  AppStrings.finance,
+                  "Abonelik",
                   style: TextStyle(
                     color: Color(0xFFADADAD),
                     fontSize: 20,
@@ -200,12 +199,12 @@ class FinanceWidget extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(bottom: 16),
             child: InkWell(
-              onTap: () => onWebLinkTap("Satın Aldıklarım", "/order"),
+              onTap: () => onWebLinkTap("Siparişlerim", "/order"),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text(
-                    "💳 Satın Almalar",
+                    "💳 Siparişlerim",
                     style: TextStyle(
                       fontSize: 18,
                     ),
@@ -218,12 +217,12 @@ class FinanceWidget extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(bottom: 16),
             child: InkWell(
-              onTap: () => onWebLinkTap("我的邀请", "/invite"),
+              onTap: () => onWebLinkTap("Devet Et Kazan", "/invite"),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text(
-                    "🫲 我的邀请",
+                    "🫲 Davet Et Kazan",
                     style: TextStyle(
                       fontSize: 18,
                     ),

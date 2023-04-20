@@ -22,17 +22,17 @@ class LoginPageState extends State<LoginPage> {
 
   static String? _emailValidator(value) {
     if (value.isEmpty || !RegExp(r'^[^\s@]+@[^\s@]+\.[^\s@]+$').hasMatch(value)) {
-      return '请输入正确邮箱!';
+      return 'Lütfen geçerli e-posta adresini girin!';
     }
     return null;
   }
 
   static String? _passwordValidator(String? value) {
     if (value?.isEmpty == true) {
-      return '密码不能为空!';
+      return 'Şifre alanı boş olamaz!';
     }
     if (value?.length == null || value!.length < 6) {
-      return '密码不能小于6位';
+      return 'Şifre 8 karakterden az olamaz';
     }
     return null;
   }
@@ -43,7 +43,7 @@ class LoginPageState extends State<LoginPage> {
     try {
       await _loginModel.login(data.name, data.password);
     } catch (error) {
-      result = '登陆失败，请重试';
+      result = 'Giriş başarısız. Lütfen tekrar deneyin';
     }
 
     return result;
@@ -57,7 +57,7 @@ class LoginPageState extends State<LoginPage> {
 
       await _loginModel.login(data.name, data.password);
     } catch (error) {
-      result = '注册失败，请重试';
+      result = 'Kayıt başarısız oldu, lütfen tekrar deneyin';
     }
 
     return result;
@@ -79,18 +79,18 @@ class LoginPageState extends State<LoginPage> {
       onLogin: _login,
       onSignup: _register,
       messages: LoginMessages(
-          userHint: '邮箱',
-          passwordHint: '密码',
-          confirmPasswordHint: '确认密码',
-          confirmPasswordError: '两次密码不匹配',
-          forgotPasswordButton: '忘记密码？',
-          loginButton: '登陆',
-          signupButton: '注册',
-          recoverPasswordIntro: '重置密码',
-          recoverPasswordButton: '确定',
-          recoverPasswordDescription: '系统将向您的邮箱发送一封重置密码邮件，请注意查收',
-          recoverPasswordSuccess: '发送成功',
-          goBackButton: '返回'),
+          userHint: 'Posta',
+          passwordHint: 'Şifre',
+          confirmPasswordHint: 'Şifreyi Tekra Girin',
+          confirmPasswordError: 'iki şifre uyuşmuyor',
+          forgotPasswordButton: 'Şifremi Unuttum.',
+          loginButton: 'Giriş Yap',
+          signupButton: 'Üye Ol',
+          recoverPasswordIntro: 'Şifreyi yenile',
+          recoverPasswordButton: 'Onayla',
+          recoverPasswordDescription: 'Sistem, posta kutunuza bir şifre sıfırlama e-postası gönderecektir, lütfen kontrol etmeye dikkat edin.',
+          recoverPasswordSuccess: 'Kurtarma Epostası başarıyla gönderildi',
+          goBackButton: 'Geri Dön'),
       onSubmitAnimationCompleted: () {
         NavigatorUtil.goHomePage(context);
       },

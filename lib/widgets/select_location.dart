@@ -56,7 +56,7 @@ class SelectLocationState extends State<SelectLocation> {
                 const Icon(Icons.sailing),
                 Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(10))),
                 Text(
-                  _serverModel.selectServerEntity?.name ?? "选择连接节点",
+                  _serverModel.selectServerEntity?.name ?? "Sunucu Seç",
                   style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
                 Expanded(child: Container()),

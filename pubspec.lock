@@ -130,10 +130,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_icmp_ping
-      sha256: a06c2255a857c8f9d1b0a68f546b113557e48e7a543f91e38bd66aeab296f3a6
+      sha256: b3c2ed75d2429d32e54c04c153dd5605ffba10124a5208a9906759d4cd4822cd
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.2"
+    version: "3.1.1"
   flutter_inappwebview:
     dependency: transitive
     description:
